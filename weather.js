@@ -16,7 +16,7 @@ function printError(error){
 
 //Prints the weather in the console.
 function printWeather(cityName, weather, max){
-    const message = `The weather in ${cityName} is ${(weather-273.15)} Celsius, with a max of ${max - 273.15}.`;
+    const message = `The weather in ${cityName} is ${(weather-273.15)} Celsius, with a max of ${max - 273.15}C.`;
     console.log(message);
 };
 
