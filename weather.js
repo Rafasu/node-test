@@ -1,11 +1,14 @@
 // Use of node.js to connect to 
 //Formula to change from Kelvin to Celsius: 0 K − 273.15 = -273.1 °C
 //Formula to change from Farenheit to Celsius: (°F − 32) × 5/9 = 0 °C
+//Favorite number apikey to make it function.
 
 //Require https module
 const https = require('https');
 //Require http module
 const http  = require("http");
+//Enter your api key(Example of one)
+const apiKey = 'd6e0f4b9c353eeec9d13a03a131acd3422';
 
 function printError(error){
     console.error(error.message);
@@ -20,7 +23,7 @@ function printWeather(cityName, weather){
 
 function getWeather(cityName, countryCode){
     try{
-        const request = https.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&APPID=d6e0f4b9c353eeec9d13a03a131acd34`, 
+        const request = https.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&APPID=${apiKey}`, 
         response =>{
             //Response it's ok.
             if(response.statusCode === 200){
@@ -42,9 +45,7 @@ function getWeather(cityName, countryCode){
                     }catch(error){
                         printError(error);
                     }
-
                 });
-
             }
             else{
                 const message = `There was an error getting the city ${cityName} (${http.STATUS_CODES[response.statusCode]})`;
@@ -56,7 +57,6 @@ function getWeather(cityName, countryCode){
     }catch(error){
         printError(error);
     }
-
 }
 
 const city = process.argv.slice(2,3);
