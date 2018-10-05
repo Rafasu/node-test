@@ -11,8 +11,9 @@ function printError(error){
     console.error(error.message);
 }
 
+//Prints the weather in the console.
 function printWeather(cityName, weather){
-    const message = `The weather in ${cityName} is ${(weather-273.15)} C`;
+    const message = `The weather in ${cityName} is ${(weather-273.15)} Celsius.`;
     console.log(message);
 };
 
