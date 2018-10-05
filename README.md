@@ -1,6 +1,6 @@
 # Repository of Node apps. 
 
-This repository contains different programs made with node-js. The purpose is to help me in the process of learning node.
+This repository contains different programs made with node-js. The purpose of this, is to help me in the process of learning node.
 
 
 
