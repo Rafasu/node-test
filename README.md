@@ -2,7 +2,8 @@
 
 This repository contains different programs made with node-js. The purpose of this, is to help me in the process of learning node.
 
-
+## TO DO
+* Create a weather command line application with OpenWeatherApp or WeatherUnderground.
 
 
  ## Authors
