@@ -1,4 +1,4 @@
-// Use of node.js to connect to 
+// Use of node.js to connect to Open Weather App to get the temperature of a city.
 //Formula to change from Kelvin to Celsius: 0 K − 273.15 = -273.1 °C
 //Formula to change from Farenheit to Celsius: (°F − 32) × 5/9 = 0 °C
 //Favorite number apikey to make it function.
@@ -15,8 +15,8 @@ function printError(error){
 }
 
 //Prints the weather in the console.
-function printWeather(cityName, weather){
-    const message = `The weather in ${cityName} is ${(weather-273.15)} Celsius.`;
+function printWeather(cityName, weather, max){
+    const message = `The weather in ${cityName} is ${(weather-273.15)} Celsius, with a max of ${max - 273.15}.`;
     console.log(message);
 };
 
@@ -40,7 +40,7 @@ function getWeather(cityName, countryCode){
                         // Parse the data
                         const weather = JSON.parse(body);                            
                         // Print the data
-                        printWeather(cityName, weather.main.temp);
+                        printWeather(cityName, weather.main.temp, weather.main.temp_max);
 
                     }catch(error){
                         printError(error);
